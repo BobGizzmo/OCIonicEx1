@@ -1,0 +1,20 @@
+<ion-header padding>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="onToggleMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Livres disponnibles</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngFor="let book of books; let i = index" (click)="onBookClick(i)">
+    <ion-card-header>{{ book.title }}</ion-card-header>
+    <ion-card-content>
+      <img src="{{ book.cover }}" alt="{{ book.title }}"/>
+      <p><i>{{ book.author }}</i></p>
+      <p padding>{{ book.description }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

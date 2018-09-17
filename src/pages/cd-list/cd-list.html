@@ -1,0 +1,20 @@
+<ion-header padding>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="onToggleMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Cd's Collection</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngFor="let cd of cds; let i = index" (click)="onCdClick(i)">
+    <ion-card-header>{{ cd.title }}</ion-card-header>
+    <ion-card-content>
+      <img src="{{ cd.cover }}" alt="{{ cd.title }}">
+      <p>Groupe: {{ cd.author }}</p>
+      <p>Date: <i>{{ cd.created_at }}</i></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
